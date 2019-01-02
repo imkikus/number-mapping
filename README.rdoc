@@ -5,24 +5,15 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Bundle install
 
-* System dependencies
+* Start the rails server `rails s`
 
-* Configuration
+* Visit localhost:3000 in the browser
 
-* Database creation
+* Input the phone number to see the results
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
+* Note: Have an internet connection
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
