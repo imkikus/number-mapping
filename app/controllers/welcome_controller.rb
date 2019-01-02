@@ -56,7 +56,18 @@ class WelcomeController < ApplicationController
         grouped_hash[i] = [(combo1 & word_hash[i+2]), (combo2 & word_hash[number_of_digits - i +1])]
       end
 
-      @grouped_hash = grouped_hash
+      result = []
+
+      grouped_hash.each do |key, collection|
+        next if collection.first.nil? || collection.last.nil?
+        collection.first.product(collection.last).each do |combination|
+          result << combination
+        end
+      end
+
+      result << (mapped_keys.shift.product(*mapped_keys).map(&:join) & word_hash[11]).join(", ")
+      result = result.sort{|a, b| a.to_s <=> b.to_s}
+      @final_combination = result
 
     else
       flash[:info] = "Please enter the phone number"
